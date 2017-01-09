@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "R语言学习笔记 | 数据结构篇"
+title:      "R语言学习笔记「数据结构篇」"
 subtitle:   "R语言学习笔记"
 date:       2017-01-09
 author:     "Xu Zhixun"

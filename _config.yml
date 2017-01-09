@@ -14,9 +14,9 @@ baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 # SNS settings
 RSS: false
 weibo_username:     isxuzhixun
-zhihu_username:     xuzhixun
+# zhihu_username:     xuzhixun
 github_username:    xuzhixun
-twitter_username:  xuzhixun
+# twitter_username:  xuzhixun
 facebook_username:  justxzx
 
 

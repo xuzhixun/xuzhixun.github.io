@@ -1,0 +1,44 @@
+---
+layout:     post
+title:      "R语言学习笔记|数据输入篇"
+subtitle:   "R语言学习笔记"
+date:       2017-01-09
+author:     "Xu Zhixun"
+header-img: "img/post-bg-unix-linux.jpg"
+tags:
+    - 笔记
+    - R语言
+    - 数据
+---
+
+#### 手工录入
+
+```R
+mydata <- data.frame(
+  age=numeric(0),
+  gender=character(0),
+  weight=numeric(0)
+)
+
+mydata <- edit(mydata)
+```
+
+#### 导入CSV格式
+
+```R
+csvdata <- read.table(
+  'data.csv', 
+  header = TRUE,
+  sep = ',',
+  row.names = '病人编号'
+)
+```
+
+#### 导入Excel格式
+
+```R
+library(RODBC)
+channel <- odbcConnectExcel('data.xls')
+mydata2 <- sqlFetch(channel,'Sheet1')
+odbcClose(channel)
+```

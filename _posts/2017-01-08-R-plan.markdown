@@ -8,7 +8,7 @@ header-img: "img/post-bg-unix-linux.jpg"
 tags:
     - 计划
     - R语言
-    - 数据分析
+    - 数据
 ---
 
 > 吴军《智能时代》：

@@ -1,0 +1,237 @@
+---
+layout:     post
+title:      "R语言学习笔记|数据结构篇"
+subtitle:   "R语言学习笔记"
+date:       2017-01-09
+author:     "Xu Zhixun"
+header-img: "img/post-bg-unix-linux.jpg"
+tags:
+    - 笔记
+    - R语言
+    - 数据
+---
+
+# 向量-Vetor
+
+## 单元素
+
+```R
+a <- 1
+a <- 'one'
+a <- TRUE
+```
+
+## 多元素
+
+```R
+a <- c(1,2,3)
+a <- c('one','two','three')
+a <- c('one','two','three')
+```
+
+## 选取
+
+```R
+a[1] 
+a[c(1,1)]
+a[1:3]
+```
+
+# 矩阵-Matrix
+
+## 格式
+
+```R
+my_matrix <- matrix(
+  vector, 
+  nrow = number_of_rows, 
+  ncol = number_of_columns,
+  byrow = logical_value,
+  dimnames = list(char_vector_rownames,char_vector_colnames)
+)
+```
+
+## 示例
+
+```R
+cells <- c(1,2,3,4)
+rnames <- c('R1','R2')
+cnames <- c('C1','C2')
+m <- matrix(
+  cells,
+  nrow = 2, 
+  ncol = 2, 
+  byrow = TRUE,
+  dimnames = list(rnames,cnames)
+)
+```
+
+## 选取
+
+```R
+m[1,]
+m[,2]
+m[1,2]
+m[1,c(1,2)]
+```
+
+# 数组-Array
+
+## 格式
+
+```R
+my_array <- array(
+  vector,
+  dimensions,
+  dimnames
+)
+```
+
+## 示例
+
+```R
+dim1 <- c('A1','A2')
+dim2 <- c('B1','B2','B3')
+dim3 <- c('C1','C2','C3','C4')
+z <- array(
+  c(1:24),
+  c(2,3,4),
+  list(dim1, dim2, dim3)
+)
+```
+
+## 选取
+
+```R
+z[1,1,1]
+z[1,,]
+```
+
+# 数据框-Data_frame
+
+## 格式
+
+```R
+my_data <- data.frame(col1,col2,col3)
+```
+
+## 示例
+
+```R
+patientID <- c(1,2,3,4)
+age <- c(20,34,11,23)
+diabets <- c('Type1','Type2','Type2','Type1')
+status <- c('Poor','Improved','Excellent','Poor')
+
+patientdata <- data.frame(patientID,age,diabets,status)
+```
+
+## 选取
+```R
+#按列数选取
+patientdata[1:2]
+
+#按变量（列名）选取
+patientdata$patientID
+patientdata$age
+
+#按列联表选取，用table()函数
+table(patientdata$diabets,patientdata$status)
+
+#用attach(),detach(),with()选取
+#attach(),绑定数据框；detach()解绑数据框。
+attach(patientdata)
+age
+detach(patientdata)
+
+#with(),把操作封装到函数内。函数内的赋值，在函数外无法调用，除非使用全局赋值<<-
+with(patientdata,{
+  #执行语句
+})
+
+#实例标识符
+#用某一变量来表示一个个体
+datafram1 <- data.frame(col11, col12, col13,row.names = col11)
+#上句代码在创建数据框的同时，为每行数据指定了一个唯一的标识符,例如用ID指定某行数据。
+```
+
+# 因子-Factor
+
+```R
+#名义型变量和有序型变量称为因子
+#作用是建立非数量型变量与数字的映射
+
+#名义型变量,下向量被储存为(1,2,3,1)
+diabets <- c('T1','T2','T3','T1')
+diabets <- factor(diabets)
+diabets
+
+#有序型变量，排序默认按照首字母
+status <- c('Poor','Improved','Excellent','Poor')
+status <- factor(status, ordered = TRUE)
+status
+
+#改变顺序，自定义顺序
+status2 <- c('Poor','Improved','Excellent','Poor')
+status2 <- factor(status2, ordered = TRUE,levels = c('Poor','Improved','Excellent'))
+status2
+```
+
+# 列表-List
+
+## 格式
+
+```R
+my_list <- list(object1, object2,...)
+
+#可以给列表中对象命名
+my_list <- list(name1=object1, name2=object2,...)
+```
+
+## 示例1
+
+```R
+#定义
+flag <- "patient data and its kpi";
+#病人编号
+patientID <- c(1, 2, 3, 4);
+#病人年龄
+age <- c(29, 34,28,52);
+#糖尿病类型
+diabetes <- c("1型糖尿病", "2型糖尿病", "1型糖尿病", "2型糖尿病");
+#病情
+status <- c("较差", "好转", "显著好转", "较差");
+
+patientdata <- data.frame(patientID, age, 
+                          diabetes, status,
+                          stringsAsFactors=FALSE);
+```
+
+## 选取1
+
+```R
+type1 <- patientdata[patientdata$diabetes =="1型糖尿病",];
+
+number <- nrow(patientdata);
+```
+
+## 示例2
+
+```R
+kpi <- list(flag=flag,
+            diabetesType1=diabetesType1,
+            diabetesType1.number=diabetesType1.number,
+            age=age);
+
+
+kpi <- list(diabetesType1=type1,
+            number=number
+);
+```
+
+## 选取2
+
+```R
+#获取列表中的kpi：病人数目
+number <- kpi[["number"]]
+```

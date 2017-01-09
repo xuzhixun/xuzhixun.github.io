@@ -69,4 +69,4 @@ tags:
 > 感谢猴子，进步的同时，扩大进步的影响，分享进步的知识；
 > 感谢大数据思维群的伙伴，交流各个行业的信息，并彼此监督鼓励。
 
-从现在起，第一视角看数据。第一视角是向前看的，也是未来视角。过程中的笔记与感悟也将在[知乎](https://www.zhihu.com/people/xuzhixun/activities)和[GitHub主页](xuzhixun.github.io)，2017结束时，再回头看，但求能看得更深远，望所获所得不负今日初心。
+从现在起，第一视角看数据。第一视角是向前看的，也是未来视角。过程中的笔记与感悟也将在[知乎](https://www.zhihu.com/people/xuzhixun/activities)和[GitHub主页](https://xuzhixun.github.io)，2017结束时，再回头看，但求能看得更深远，望所获所得不负今日初心。

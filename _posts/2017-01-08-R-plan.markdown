@@ -3,7 +3,7 @@ layout:     post
 title:      "2017,第一视角看数据"
 subtitle:   "R语言学习计划"
 date:       2017-01-08
-author:     "Xu Zhixun"
+author:     "Zhang Shuo"
 header-img: "img/post-bg-unix-linux.jpg"
 tags:
     - 计划

@@ -1,0 +1,15 @@
+---
+layout:     post
+title:      "重装RStudio，中文显示乱码"
+subtitle:   "R语言学习笔记"
+date:       2017-06-13
+author:     "Xu Zhixun"
+header-img: "img/post-bg-unix-linux.jpg"
+tags:
+    - 笔记
+    - R语言
+    - 数据
+---
+
+毕业论文终稿定稿后，迫不及待升级了系统并重置了电脑。重新安装完RStudio后发现原来的项目，现在打开后，中文注释统统乱码。
+

@@ -26,4 +26,8 @@ tags:
 
 ![3](/img/in-post/20170613/3.png)
 
+选择File -> Reopen with encoding菜单，出现下面界面，选择UTF-8，即可。
+
 ![4](/img/in-post/20170613/4.png)
+
+![5](/img/in-post/20170613/5.png)
